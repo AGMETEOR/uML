@@ -12,7 +12,8 @@ jobs:
       - run:
           name: install-lapack
           command: |
-            sudo apt install libatlas-base-dev
+            sudo apt-get install libblas3 liblapack3 liblapack-dev libblas-dev
+            sudo apt-get install gfortran
 
       - python/install-deps
 
