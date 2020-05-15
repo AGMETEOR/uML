@@ -1,0 +1,29 @@
+version: 2.1
+
+orbs:
+  python: circleci/python@0.2.1
+
+jobs:
+  build:
+    executor: python/default
+    steps:
+      - checkout
+      - python/load-cache
+      - python/install-deps
+
+      - run:
+        name: install-hadolint
+        command: |
+          wget -O /bin/hadolint https://github.com/hadolint/hadolint/releases/download/v1.16.3/hadolint-Linux-x86_64 &&\
+          chmod +x /bin/hadolint
+
+      - python/save-cache
+
+      - run:
+          command: make lint
+          name: run-hadolint
+
+workflows:
+  main:
+    jobs:
+      - build
