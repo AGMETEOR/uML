@@ -10,10 +10,11 @@ jobs:
       - checkout
       - python/load-cache
       - run:
-          name: install-lapack
+          name: install-scipy
           command: |
-            sudo apt-get install libblas3 liblapack3 liblapack-dev libblas-dev
-            sudo apt-get install gfortran
+            wget https://repo.anaconda.com/archive/Anaconda3-2020.02-Linux-x86_64.sh
+            bash Anaconda3-2020.02-Linux-x86_64.sh
+            conda install scipy
 
       - python/install-deps
 
