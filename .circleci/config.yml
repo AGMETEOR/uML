@@ -11,12 +11,6 @@ jobs:
       - python/load-cache
 
       - run:
-          name: activate-virtualenv
-          command: |
-            python3 -m venv venv
-            . venv/bin/activate
-
-      - run:
           name: install-scipy
           command: |
             wget https://repo.continuum.io/archive/Anaconda3-4.2.0-Linux-x86_64.sh
