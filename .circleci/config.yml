@@ -31,7 +31,7 @@ jobs:
       - python/save-cache
         
       - run:
-          name: run-hadolint
+          name: run-linters
           command: make lint
 
 workflows:

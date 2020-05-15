@@ -1,4 +1,4 @@
-<include a CircleCI status badge, here>
+[![AGMETEOR](https://circleci.com/gh/AGMETEOR/uML.svg?style=svg)](https://app.circleci.com/pipelines/github/AGMETEOR/uML)
 
 ## Project Overview
 
