@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify
 from flask.logging import create_logger
 import logging
+import os
 
 import pandas as pd
 from sklearn.externals import joblib
@@ -17,6 +18,10 @@ def scale(payload):
     scaler = StandardScaler().fit(payload.astype(float))
     scaled_adhoc_predict = scaler.transform(payload.astype(float))
     return scaled_adhoc_predict
+    
+def write_log_file(content):
+    """creates log file and dumps prediction"""
+    logging.basicConfig(filename='docker_out.txt',level=logging.INFO)
 
 @app.route("/")
 def home():
@@ -68,4 +73,5 @@ def predict():
 if __name__ == "__main__":
     # load pretrained model as clf
     clf = joblib.load("./model_data/boston_housing_prediction.joblib")
+    logging.basicConfig(filename='log-data/docker_out.txt',level=logging.INFO)
     app.run(host='0.0.0.0', port=80, debug=True) # specify port=80
