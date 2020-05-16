@@ -1,18 +1,17 @@
 FROM python:3.7.3-stretch
 
-## Step 1:
-# Create a working directory
+WORKDIR /code
 
-## Step 2:
-# Copy source code to working directory
+COPY . /code
 
-## Step 3:
-# Install packages from requirements.txt
+RUN pip3 --no-cache-dir install -r requirements.txt
+RUN pip3 install scipy
+
 # hadolint ignore=DL3013
 
-## Step 4:
-# Expose port 80
+EXPOSE 80
 
-## Step 5:
-# Run app.py at container launch
+COPY entrypoint.sh /
+ENTRYPOINT ["/entrypoint.sh"]
+CMD ["python3 app.py"]
 
