@@ -3,23 +3,18 @@ version: 2.1
 orbs:
   python: circleci/python@0.3.0
 
+parameters:
+  tag:
+    default: '3.7'
+    description: The `cimg/python` Docker image version tag.
+    type: string
+
 jobs:
   build:
     executor: python/default
     steps:
       - checkout
       - python/load-cache
-
-      - run:
-          name: install-scipy
-          command: |
-            wget https://repo.continuum.io/archive/Anaconda3-4.2.0-Linux-x86_64.sh
-            bash Anaconda3-4.2.0-Linux-x86_64.sh -b -p ~/anaconda
-            rm Anaconda3-4.2.0-Linux-x86_64.sh
-            echo 'export PATH="~/anaconda/bin:$PATH"' >> ~/.bash_profile
-            source ~/.bash_profile
-            conda install scipy
-
       - python/install-deps
 
       - run:
