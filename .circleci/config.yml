@@ -9,7 +9,7 @@ executors:
       - image: python:3.7.3-stretch
 
 jobs:
-  build:
+  build-lint:
     executor: uml-executor
     steps:
       - checkout
@@ -33,4 +33,4 @@ jobs:
 workflows:
   main:
     jobs:
-      - build
+      - build-lint
