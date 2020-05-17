@@ -3,15 +3,14 @@ version: 2.1
 orbs:
   python: circleci/python@0.3.0
 
-parameters:
-  tag:
-    default: '3.7'
-    description: The `cimg/python` Docker image version tag.
-    type: string
+executors:
+  uml-executor:
+    docker:
+      - image: python:3.7.3-stretch
 
 jobs:
   build:
-    executor: python/default
+    executor: uml-executor
     steps:
       - checkout
       - python/load-cache
