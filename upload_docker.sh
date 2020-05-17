@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-dockerpath="agmeteor/uml"
+dockerpath=$1
 
-docker tag "$1" agmeteor/uml $dockerpath
+docker tag uml $dockerpath:latest
 
 docker push $dockerpath
