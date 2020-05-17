@@ -1,1 +1,7 @@
-<paste log output from Kubernetes-mediated prediction, here>
+|-----------|---------|-------------|-------------------------|
+| NAMESPACE |  NAME   | TARGET PORT |           URL           |
+|-----------|---------|-------------|-------------------------|
+| default   | kubeuml |          80 | http://172.17.0.3:31420 |
+|-----------|---------|-------------|-------------------------|
+🎉  Opening service default/kubeuml in default browser...
+👉  http://172.17.0.3:31420

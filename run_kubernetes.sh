@@ -1,17 +1,14 @@
 #!/usr/bin/env bash
 
-# This tags and uploads an image to Docker Hub
+dockerpath=$1
 
-# Step 1:
-# This is your Docker ID/path
-# dockerpath=<>
+kubectl create deployment kubeuml --image=$1:latest
 
-# Step 2
-# Run the Docker Hub container with kubernetes
+kubectl get pods
 
+kubectl delete service kubeuml
 
-# Step 3:
-# List kubernetes pods
+kubectl expose deployment kubeuml --type=LoadBalancer --port=80
 
 # Step 4:
 # Forward the container port to a host
