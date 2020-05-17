@@ -5,7 +5,6 @@ WORKDIR /code
 COPY . /code
 
 RUN pip3 --no-cache-dir install -r requirements.txt
-RUN pip3 install scipy==1.3.1
 
 # hadolint ignore=DL3013
 
