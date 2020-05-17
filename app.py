@@ -63,11 +63,12 @@ def predict():
     scaled_payload = scale(inference_payload)
     # get an output prediction from the pretrained model, clf
     prediction = list(clf.predict(scaled_payload))
-    LOG.info()
     LOG.info(f"JSON prediction: \n{prediction}")
     return jsonify({'prediction': prediction})
 
 if __name__ == "__main__":
+    #set logging to a file
+    logging.basicConfig(filename='output_txt_files/docker_out.txt')
     # load pretrained model as clf
     clf = joblib.load("./model_data/boston_housing_prediction.joblib")
     app.run(host='0.0.0.0', port=80, debug=True) # specify port=80
