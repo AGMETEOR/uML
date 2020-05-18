@@ -16,4 +16,4 @@ fi
 
 echo $SCRIPT_DIR
 
-docker run -it -p 80:80 -v "$SCRIPT_DIR":/code/output_txt_files:rw uml
+docker run -it -p 8000:80 -v $SCRIPT_DIR:/code/output_txt_files:rw uml
