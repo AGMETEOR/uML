@@ -4,4 +4,16 @@ docker build -t uml:latest .
 
 docker image ls
 
-docker run -it -p 80:80 -v /home/ec2-user/environment/uML/output_txt_files:/code/output_txt_files:rw uml
+if [ -z  "$1" ]; then
+    echo "You didn't supply a volume for logging."
+    SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+    SCRIPT_DIR+="/output_txt_files"
+    echo "Using: '"$SCRIPT_DIR"' for logging"
+
+else
+    SCRIPT_DIR=$1
+fi
+
+echo $SCRIPT_DIR
+
+docker run -it -p 80:80 -v "$SCRIPT_DIR":/code/output_txt_files:rw uml
