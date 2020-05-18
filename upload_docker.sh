@@ -1,7 +1,12 @@
 #!/usr/bin/env bash
 
-dockerpath=$1
+if [ -z "$1"]; then
+    echo "Provide a path to your docker repository"
+    exit
+fi
 
-docker tag uml $dockerpath:latest
+DOCKERPATH=$1
 
-docker push $dockerpath
+docker tag uml $DOCKERPATH:latest
+
+docker push $DOCKERPATH
