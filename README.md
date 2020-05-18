@@ -30,6 +30,8 @@ You can read more about the data, which was initially taken from Kaggle, on [the
 
 ### 1.2 Using docker (reccommended)
 
+Built docker hub image repo > `https://hub.docker.com/r/agmeteor/uml`
+
 ```$ ./run_docker.sh```
 
 NB: You need to set up a volume for the docker container to put logs. Otherwise, a volume within the project is used.
