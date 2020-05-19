@@ -55,3 +55,4 @@ Logging is output to a file using a volume connected to docker container at run 
 ### 3.2 Logging from kubernetes cluster (not scalable for larger clusters with many pods)
 
 ```kubectl logs <pod name>```
+Improvements can be done by integrating a fluentd DaemonSet into our deployment alongside elastic search and kibana
