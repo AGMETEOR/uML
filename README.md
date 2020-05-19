@@ -45,3 +45,13 @@ Using the image generated from step 1.2, you launch a container on pod with a ku
 ## 2.0 Development on AWS Cloud 9
 
 In case of space errors on the EC2 machine, run ```$ ./resize.sh <volume size>```
+
+## 3.0 Good to know information
+
+### 3.1 Logging with docker
+
+Logging is output to a file using a volume connected to docker container at run time. By default logs are written to `output_txt_files/docker_out.txt`
+
+### 3.2 Logging from kubernetes cluster (not scalable for larger clusters with many pods)
+
+```kubectl logs <pod name>```
