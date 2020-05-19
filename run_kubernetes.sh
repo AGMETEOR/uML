@@ -1,15 +1,8 @@
 #!/usr/bin/env bash
 
-dockerpath=$1
+# Create a deployment with nodeport service using yaml
+# Exposed node port is 30001
+kubectl apply -f k8s/deployments.yml -f k8s/services.yml
 
-kubectl create deployment kubeuml --image=$1:latest
-
+# List pods in our deployment
 kubectl get pods
-
-kubectl delete service kubeuml
-
-kubectl expose deployment kubeuml --type=LoadBalancer --port=80
-
-# Step 4:
-# Forward the container port to a host
-
