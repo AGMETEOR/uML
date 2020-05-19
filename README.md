@@ -39,6 +39,7 @@ NB: You need to set up a volume for the docker container to put logs. Otherwise,
 ### 1.3 Deploy to Kubernetes cluster
 
 Using the image generated from step 1.2, you launch a container on pod with a kubernetes cluster
+Kubernetes cluster configuration files are found in ```k8s``` folder and include a ```Deployment component``` and a ```Nodeport service``` component.
 
 ```$ ./run_kubernetes.sh```
 
