@@ -1,0 +1,13 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: uml-service
+spec:
+  selector:
+    app: uml
+  ports:
+    protocol: TCP
+    port: 80
+    targetPort: 80
+    nodePort: 30001
+  type: NodePort
