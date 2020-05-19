@@ -1,7 +1,26 @@
-|-----------|---------|-------------|-------------------------|
-| NAMESPACE |  NAME   | TARGET PORT |           URL           |
-|-----------|---------|-------------|-------------------------|
-| default   | kubeuml |          80 | http://172.17.0.3:31420 |
-|-----------|---------|-------------|-------------------------|
-🎉  Opening service default/kubeuml in default browser...
-👉  http://172.17.0.3:31420
+➜  DevOps_Microservices git:(master) ✗ kubectl logs uml-deployment-7875b6d45d-xssvd
+ * Serving Flask app "app" (lazy loading)
+ * Environment: production
+   WARNING: Do not use the development server in a production environment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+[2020-05-19 11:24:16,672] INFO in app: JSON payload: 
+{'CHAS': {'0': 0}, 'RM': {'0': 6.575}, 'TAX': {'0': 296.0}, 'PTRATIO': {'0': 15.3}, 'B': {'0': 396.9}, 'LSTAT': {'0': 4.98}}
+[2020-05-19 11:24:16,700] INFO in app: Inference payload DataFrame: 
+   CHAS     RM    TAX  PTRATIO      B  LSTAT
+0     0  6.575  296.0     15.3  396.9   4.98
+[2020-05-19 11:24:16,712] INFO in app: Scaling Payload: 
+   CHAS     RM    TAX  PTRATIO      B  LSTAT
+0     0  6.575  296.0     15.3  396.9   4.98
+[2020-05-19 11:24:16,722] INFO in app: JSON prediction: 
+[20.35373177134412]
+[2020-05-19 11:40:25,799] INFO in app: JSON payload: 
+{'CHAS': {'0': 0}, 'RM': {'0': 6.575}, 'TAX': {'0': 296.0}, 'PTRATIO': {'0': 15.3}, 'B': {'0': 396.9}, 'LSTAT': {'0': 4.98}}
+[2020-05-19 11:40:25,814] INFO in app: Inference payload DataFrame: 
+   CHAS     RM    TAX  PTRATIO      B  LSTAT
+0     0  6.575  296.0     15.3  396.9   4.98
+[2020-05-19 11:40:25,827] INFO in app: Scaling Payload: 
+   CHAS     RM    TAX  PTRATIO      B  LSTAT
+0     0  6.575  296.0     15.3  396.9   4.98
+[2020-05-19 11:40:25,834] INFO in app: JSON prediction: 
+[20.35373177134412]
